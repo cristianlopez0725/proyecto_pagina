@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-class Conectar {
+    class Conectar {
     protected $dbn;
 
     protected function Conexion() {

@@ -24,9 +24,9 @@ class Usuario extends Conectar {
 
                 if (is_array($result) && count($result) > 0) {
                     $_SESSION["usu_id"] = $result["usu_id"];
-                    $_SESSION["nombre"] = $result["nombre"];
-                    $_SESSION["ape_paterno"] = $result["ape_paterno"];
-                    $_SESSION["correo"] = $result["correo"];
+                    $_SESSION["usu_nombre"] = $result["usu_nombre"];
+                    $_SESSION["usu_apem"] = $result["usu_apem"];
+                    $_SESSION["usu_correo"] = $result["usu_correo"];
                     header("location:" . Conectar::ruta() . "views/home.php");
                     exit();
                 } else {
