@@ -1,3 +1,14 @@
+<?php 
+  require_once ("config/conexion.php");
+
+  if(isset($_POST["enviar"]) and $_POST["enviar"]=="si"){
+    require_once("models/Usuario.php");
+
+    $usuario = new Usuario();
+    $usuario->login();
+  }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,7 +63,7 @@
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+            <button type="submit" class="btn btn-primary btn-block">enviar</button>
           </div>
           <!-- /.col -->
         </div>
@@ -62,7 +73,27 @@
   </div>
 </div>
 <!-- /.login-box -->
-
+<!--login Php-->
+<?php
+ if(isset($_GET["m"])){
+  switch($_GET["m"]){
+    case "1";
+      ?>
+      <div class="alert alert_danger" role="alert">
+        Los datos son incorrectos
+      </div>
+      <?php
+      break;
+    case "2";
+     ?>
+     <div class="alert alert-warning" role="alert">
+      El formulario tiene los campos vacios
+     </div>
+    <?php
+    break;
+  }
+ }
+?>
 <!-- jQuery -->
 <script src="../../proyecto/public/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
