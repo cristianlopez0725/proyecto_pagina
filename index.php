@@ -34,7 +34,7 @@
             </header>
             <div class="presentacion">
                 <p class="mensaje">Bienvenidos</p>
-                <h2>Soy <span>Cristian Lopez</span> Ingeniero de sistemas</h2>
+                <h2>Soy <span>cristian lopez</span> Ingeniero de sistemas</h2>
                 <p class="descripciom">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti aliquid exercitationem, 
                     adipisci tempore assumenda atque, veritatis veniam animi facere quaerat quam quasi harum, eum voluptate repellendus 
                     tenetur ipsum officiis rem.</p>
@@ -48,7 +48,7 @@
         </div>
         <div class="info_sobreMi">
             <p class="titulo">Quien soy?</p>
-            <h2>Soy, <span>Cristian</span></h2>
+            <h2>Soy, <span>cristian lopez</span></h2>
             <h3>Slogan</h3>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus harum ex a sunt facere ea eveniet maxime modi 
                 at commodi ratione amet ut explicabo ipsa, iusto autem possimus ab similique.</p>
@@ -194,7 +194,7 @@
     </section>
     <footer class="footer">
         <div class="footer-text">
-            <p>lopez</p>
+            <p>cristina</p>
         </div>
         <div class="footer_icon">
             <a href="#"><i class="bx bx-up-arrow-alt"></i></a>
