@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-    class Conectar {
+class Conectar {
     protected $dbn;
 
     protected function Conexion() {
@@ -18,18 +18,17 @@ session_start();
             $this->dbn = new PDO($dsn, $user, $password);
             $this->dbn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            echo "La conexión fue exitosa";
-
         } catch (PDOException $e) {
             echo "Error de conexión: " . $e->getMessage();
-            exit; 
+            exit;
         }
     }
+
     public function getConexion() {
         if (!$this->dbn) {
-            $this->Conexion(); 
+            $this->Conexion();
         }
-        return $this->dbn; 
+        return $this->dbn;
     }
 
     public function set_names() {
@@ -44,6 +43,3 @@ session_start();
         return "http://localhost/proyecto_pagina/";
     }
 }
-$conexion = new Conectar();
-$conexion->getConexion(); 
-$conexion->set_names();
