@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" href="../public/css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Home</title>
 
@@ -18,10 +19,10 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="../../index3.html" class="brand-link">
-      <img src="../../proyecto/images/logo.png" alt="" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Proyecto</span>
-    </a>
+   <a href="../index.php" class="brand-link">
+    <img src="../images/logo.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+    <span class="brand-text font-weight-light">Proyecto página</span>
+</a>
 
     <!-- Sidebar -->
     <div class="sidebar">
@@ -73,7 +74,7 @@
   </div>
   <!-- /.content-wrapper -->
 
-  <?php require_once("modulos/footer.php"); ?>
+  <?php require_once("/modulos/footer.php"); ?>
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">

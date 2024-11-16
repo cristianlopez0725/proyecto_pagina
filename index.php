@@ -9,10 +9,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi pag web personal</title>
-    <link rel="stylesheet" href="../proyecto/public/css/style.css">
+    <link rel="stylesheet" href="../proyecto_pagina/public/css/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-    <?php require_once("conexion.php"); ?>
 <body>
     <section id="home">
         <div class="contenido">
@@ -200,6 +199,6 @@
             <a href="#"><i class="bx bx-up-arrow-alt"></i></a>
         </div>
     </footer>
-    <script src="public/js/main.js"></script>
+    <script src="../proyecto_pagina/public/js/main.js"></script>
 </body>
 </html> 

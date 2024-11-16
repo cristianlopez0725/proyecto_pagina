@@ -1,7 +1,5 @@
 <?php
 require_once("../config/conexion.php");
-require_once("../models/Usuario.php");
-session_start();
 
 if (isset($_POST["enviar"]) && $_POST["enviar"] === "si") {
     $usuario = new Usuario();
