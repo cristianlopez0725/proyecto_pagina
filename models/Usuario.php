@@ -11,24 +11,26 @@ class Usuario extends Conectar {
             $password = $_POST["password"];
 
             if (empty($correo) || empty($password)) {
-                header("location:" . Conectar::ruta() . "views/login.php?m=2");
+                header("location:" . Conectar::ruta() . "index.php?m=2");
                 exit();
             } else {
-                $sql = "SELECT * FROM usuarios WHERE correo = ? AND password = ?";
+                $sql = "SELECT * FROM usuarios WHERE correo = ? AND password = ? and estado =1";
                 $stmt = $conectar->prepare($sql);
-                $stmt->bindValue(1, $correo, PDO::PARAM_STR);
-                $stmt->bindValue(2, $password, PDO::PARAM_STR);
+                $stmt->bindValue(1, $correo);
+                $stmt->bindValue(2, $password);
                 $stmt->execute();
 
-                $result = $stmt->fetch(PDO::FETCH_ASSOC);
+                $result = $stmt->fetch();
 
                 if (is_array($result) && count($result) > 0) {
                     $_SESSION["usu_id"] = $result["usu_id"];
                     $_SESSION["usu_nombre"] = $result["usu_nombre"];
+                    $_SESSION["usu_apep"] = $result["usu_apep"];
+                    $_SESSION["usu_correo"] = $result["usu_correo"];
                     header("location:" . Conectar::ruta() . "views/home.php");
                     exit();
                 } else {
-                    header("location:" . Conectar::ruta() . "views/login.php?m=1");
+                    header("location:" . Conectar::ruta() . "index.php?m=1");
                     exit();
                 }
             }
