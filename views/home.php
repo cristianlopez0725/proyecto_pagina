@@ -11,6 +11,7 @@
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
 <div class="wrapper">
+  
   <!-- Navbar -->
   <?php require_once("modulos/header.php"); ?>
   
@@ -74,7 +75,7 @@
   </div>
   <!-- /.content-wrapper -->
 
-  <?php require_once("/modulos/footer.php"); ?>
+  <?php require_once("modulos/footer.php"); ?>
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">

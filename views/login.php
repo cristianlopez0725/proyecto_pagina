@@ -45,11 +45,27 @@ if (isset($_POST["enviar"]) && $_POST["enviar"] === "si") {
                             <button type="submit" class="btn btn-primary btn-block">Acceder</button>
                         </div>
                     </div>
-                    <?php if (isset($_GET["m"])): ?>
-                        <div class="alert <?= $_GET["m"] == 1 ? 'alert-danger' : 'alert-warning'; ?>" role="alert">
-                            <?= $_GET["m"] == 1 ? 'Los datos son incorrectos' : 'El formulario tiene campos vacíos'; ?>
-                        </div>
-                    <?php endif; ?>
+                    <?php 
+                        if(isset($_GET["m"])){
+                            switch($_GET["m"]){
+                                case "1";
+                                    ?>
+                                    <div class="alert alert-danger" role="alert">
+                                        Los datos ingresados son incorrectos
+                                    </div>
+                                    <?php
+                                    break;
+                                case "2";
+                                ?>
+                                    <div class="alert alert-warning" role="alert">
+                                        El formulario tiene los campos
+                                    </div>
+                                <?php
+                                break;
+
+                            }
+                        }
+                    ?>
                 </form>
             </div>
         </div>
