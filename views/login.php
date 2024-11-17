@@ -1,28 +1,15 @@
-<?php
-
-define("BASE_PATH", "/pagina/views/"); 
-require_once("../config/conexion.php"); 
-
-if (!isset($_SESSION["usu_id"])) {
-    header("location: " . Conectar::ruta() . "views/404.php");
-    exit();
-}
+<?php 
 require_once("../config/conexion.php");
-require_once("../models/Usuario.php"); 
+require_once("../models/Usuario.php");
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 // Proceso de login
 if (isset($_POST["enviar"]) && $_POST["enviar"] === "si") {
     $usuario = new Usuario();
     $usuario->login();
 }
-
-
-if (isset($_SESSION["usu_id"])) {
-    header("location:".Conectar::ruta()."views/home.php");
-
-    }else{
-    header("location:".Conectar::ruta()."views/404.php");
-    }
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +18,7 @@ if (isset($_SESSION["usu_id"])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Log in</title>
-    <!-- Google Font: Source Sans Pro -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../public/plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="../public/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <link rel="stylesheet" href="../public/dist/css/adminlte.min.css">
@@ -47,37 +34,31 @@ if (isset($_SESSION["usu_id"])) {
                 <p class="login-box-msg">Sign in to start your session</p>
                 <form action="login.php" method="post">
                     <div class="input-group mb-3">
-                        <input type="email" name="correo" class="form-control" placeholder="Email" required>
+                        <input type="email" name="correo" class="form-control" placeholder="Email" >
                         <div class="input-group-append">
                             <div class="input-group-text"><span class="fas fa-envelope"></span></div>
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" name="password" class="form-control" placeholder="Password" required>
+                        <input type="password" name="password" class="form-control" placeholder="Password" >
                         <div class="input-group-append">
                             <div class="input-group-text"><span class="fas fa-lock"></span></div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-4">
-                            <input type="hidden" name="enviar" value="si">
-                            <button type="submit" class="btn btn-primary btn-block">Acceder</button>
                         </div>
                     </div>
                     <?php 
                         if(isset($_GET["m"])){
                             switch($_GET["m"]){
-                                case "1";
+                                case "1":
                                     ?>
                                     <div class="alert alert-danger" role="alert">
                                         Los datos ingresados son incorrectos
                                     </div>
                                     <?php
                                     break;
-                                case "2";
+                                case "2":
                                 ?>
                                     <div class="alert alert-warning" role="alert">
-                                        El formulario tiene los campos
+                                        El formulario tiene los campos vacios
                                     </div>
                                 <?php
                                 break;
@@ -85,6 +66,13 @@ if (isset($_SESSION["usu_id"])) {
                             }
                         }
                     ?>
+                    <div class="row">
+                        <div class="col-4">
+                            <input type="hidden" name="enviar" value="si">
+                            <button type="submit" class="btn btn-primary btn-block">Acceder</button>
+                        </div>
+                    </div>
+                    
                 </form>
             </div>
         </div>
