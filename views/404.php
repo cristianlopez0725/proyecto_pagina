@@ -26,7 +26,7 @@ if (isset($_SESSION["usu_id"])) {
           <h3><i class="fas fa-exclamation-triangle text-warning"></i> Oops! Page not found.</h3>
 
           <p>
-            Comprueba que la conexion este correcta <a href="login.php">return to login</a> .
+            Comprueba si la conexion es correcta <a href="login.php">return to login</a> .
           </p>
 
           

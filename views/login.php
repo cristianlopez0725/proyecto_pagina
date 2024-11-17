@@ -17,7 +17,7 @@ if (isset($_POST["enviar"]) && $_POST["enviar"] === "si") {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Log in</title>
+    <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../public/plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="../public/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
@@ -51,14 +51,14 @@ if (isset($_POST["enviar"]) && $_POST["enviar"] === "si") {
                                 case "1":
                                     ?>
                                     <div class="alert alert-danger" role="alert">
-                                        Los datos ingresados son incorrectos
+                                        Los datos ingresados son incorrectos!
                                     </div>
                                     <?php
                                     break;
                                 case "2":
                                 ?>
                                     <div class="alert alert-warning" role="alert">
-                                        El formulario no permite campos vacios
+                                        El formulario no permite campos vacios!
                                     </div>
                                 <?php
                                 break;
