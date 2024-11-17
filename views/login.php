@@ -27,7 +27,7 @@ if (isset($_POST["enviar"]) && $_POST["enviar"] === "si") {
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <b>INICIO SESION</b>
+            <b>Iniciar Sesion</b>
         </div>
         <div class="card">
             <div class="card-body login-card-body">
@@ -58,7 +58,7 @@ if (isset($_POST["enviar"]) && $_POST["enviar"] === "si") {
                                 case "2":
                                 ?>
                                     <div class="alert alert-warning" role="alert">
-                                        El formulario tiene los campos vacios
+                                        El formulario no permite campos vacios
                                     </div>
                                 <?php
                                 break;

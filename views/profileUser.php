@@ -10,7 +10,7 @@ if (isset($_SESSION["usu_id"])) {
   <meta charset="utf-8">
   <link rel="stylesheet" href="../../dashboard/stylesheets/all.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home</title>
+  <title>Perfil Usuario</title>
 
   <?php require_once("modulos/css.php"); ?>
 
