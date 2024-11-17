@@ -25,7 +25,7 @@ if (isset($_SESSION["usu_id"])) {
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
    <a href="../index.php" class="brand-link">
     <img src="../images/logo.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-    <span class="brand-text font-weight-light">Proyecto página</span>
+    <span class="brand-text font-weight-light">Proyecto Web</span>
 </a>
 
     <div class="sidebar">

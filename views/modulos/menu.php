@@ -34,7 +34,7 @@
             <form action="<?php echo 'logout.php' ?>" method="GET" style="display: inline;">
               <button type="submit" class="nav-link" style="background: none; border: none; ; cursor: pointer;">
                 <i class="nav-icon fas fa-th"></i>
-                <p>Cerrar Sesion</p>
+                <p>Cerrar sesion</p>
               </button>
             </form>
           </li>

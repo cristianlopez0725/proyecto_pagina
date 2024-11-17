@@ -27,7 +27,7 @@ if (isset($_POST["enviar"]) && $_POST["enviar"] === "si") {
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <b>LOGIN SESSION</b>
+            <b>INICIO SESION</b>
         </div>
         <div class="card">
             <div class="card-body login-card-body">
