@@ -1,10 +1,28 @@
 <?php
-require_once("../config/conexion.php");
 
+define("BASE_PATH", "/pagina/views/"); 
+require_once("../config/conexion.php"); 
+
+if (!isset($_SESSION["usu_id"])) {
+    header("location: " . Conectar::ruta() . "views/404.php");
+    exit();
+}
+require_once("../config/conexion.php");
+require_once("../models/Usuario.php"); 
+
+// Proceso de login
 if (isset($_POST["enviar"]) && $_POST["enviar"] === "si") {
     $usuario = new Usuario();
     $usuario->login();
 }
+
+
+if (isset($_SESSION["usu_id"])) {
+    header("location:".Conectar::ruta()."views/home.php");
+
+    }else{
+    header("location:".Conectar::ruta()."views/404.php");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -18,6 +36,7 @@ if (isset($_POST["enviar"]) && $_POST["enviar"] === "si") {
     <link rel="stylesheet" href="../public/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <link rel="stylesheet" href="../public/dist/css/adminlte.min.css">
 </head>
+
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">

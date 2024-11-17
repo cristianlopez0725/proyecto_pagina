@@ -1,3 +1,12 @@
+<?php
+define("BASE_PATH", "/pagina/views/"); 
+require_once("../config/conexion.php"); 
+
+if (!isset($_SESSION["usu_id"])) {
+    header("location: " . Conectar::ruta() . "views/404.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +40,7 @@
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
    
         <div class="info">
-          <p class="text-white">Cristian Lopez</p>
+          <p class="text-white">usuario</p>
         </div>
       </div>
 

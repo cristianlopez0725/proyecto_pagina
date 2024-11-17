@@ -108,7 +108,7 @@ CREATE TABLE `usuarios` (
   `usu_telf` text DEFAULT NULL,
   `est` int(11) DEFAULT NULL,
   PRIMARY KEY (`usu_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -117,6 +117,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
+INSERT INTO `usuarios` VALUES (6,'Juan','Perez','Lopez','juan.perez@example.com','pass123','1234567890',1),(7,'Maria','Gomez','Sanchez','maria.gomez@example.com','securepass','0987654321',1),(8,'Carlos','Hernandez','Martinez','carlos.hernandez@example.com','mypassword','1122334455',0),(9,'Ana','Ruiz','Diaz','ana.ruiz@example.com','ana2024','5566778899',1),(10,'Luis','Torres','Ramirez','luis.torres@example.com','luispass','6677889900',0);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -129,4 +130,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-10 23:14:17
+-- Dump completed on 2024-11-16 23:02:49

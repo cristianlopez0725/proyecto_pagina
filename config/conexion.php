@@ -41,7 +41,7 @@ class Conectar {
         }
     }
 
-    public function ruta() {
+    public static function ruta() {
         return "http://localhost/proyecto_pagina/";
     }
 }

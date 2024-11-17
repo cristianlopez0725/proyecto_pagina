@@ -1,3 +1,12 @@
+<?php
+define("BASE_PATH", "/pagina/views/"); 
+require_once("../config/conexion.php"); 
+
+if (!isset($_SESSION["usu_id"])) {
+    header("location: " . Conectar::ruta() . "views/404.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +30,7 @@
           <h3><i class="fas fa-exclamation-triangle text-warning"></i> Oops! Page not found.</h3>
 
           <p>
-            gffsthdjyy <a href="../../index.html">return to home</a> .
+            Comprueba que la conexion sea correcta <a href="../../index.html">return to home</a> .
           </p>
 
           
