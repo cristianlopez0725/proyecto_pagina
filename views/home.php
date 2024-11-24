@@ -29,6 +29,8 @@ if (isset($_SESSION["usu_id"])) {
 </a>
 
     <div class="sidebar">
+      <input type="hidden" id="usu_id" value="<?php echo $_SESSION["usu_id"];?>">
+
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
           <img src="../images/Profile-PNG-File.png" class="img-circle elevation-2" alt="User Image">
