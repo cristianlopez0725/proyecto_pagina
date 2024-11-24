@@ -51,7 +51,20 @@ if (isset($_SESSION["usu_id"])) {
           </div>
         </div>
       </div>
-    
+      <button type="button" class="btn btn-outline-primary mb-2" onclick="nuevo()">crear</button>
+      <table id="usuario_data"class="table display responsive wrap">
+      <thead>
+              <tr>
+                <th class="wd-15p">Nombre</th>
+                <th class="wd-15p">Apellido materno</th>        
+                <th class="wd-15p">Apellido paterno</th>        
+                <th class="wd-15p">Correo</th>        
+                <th class="wd-15p">Telefono</th>        
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+      </table>
     </section>
     
 

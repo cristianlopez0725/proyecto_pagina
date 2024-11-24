@@ -31,7 +31,7 @@
             <a href="usuario.php" class="nav-link">
               <i class="nav-icon fas fa-user"></i>
               <p>
-                Usuarios
+                Usuario
               </p>
             </a>
             <li class="nav-item">
