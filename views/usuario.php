@@ -11,7 +11,7 @@ if (isset($_SESSION["usu_id"])) {
   <meta charset="utf-8">
   <link rel="stylesheet" href="../../dashboard/stylesheets/all.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Social Media</title>
+  <title>Usuario</title>
   
 
   <?php require_once("modulos/css.php"); ?>
@@ -63,7 +63,8 @@ if (isset($_SESSION["usu_id"])) {
                 <th></th>
                 <th></th>
               </tr>
-            </thead>
+      </thead>
+      
       </table>
     </section>
     

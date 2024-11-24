@@ -24,6 +24,11 @@ class Conectar {
             echo "Error de conexión: " . $e->getMessage();
             exit;
         }
+    
+        
+    }
+    public function cerrarConexion() {
+        $this->dbn = null;
     }
     
     public function getConexion() {

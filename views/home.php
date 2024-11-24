@@ -9,8 +9,9 @@ if (isset($_SESSION["usu_id"])) {
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="../../dashboard/stylesheets/all.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home|Inicio</title>
+  <title>Inicio</title>
   
 
   <?php require_once("modulos/css.php"); ?>

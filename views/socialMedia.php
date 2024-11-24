@@ -52,7 +52,7 @@ if (isset($_SESSION["usu_id"])) {
           </div>
         </div>
       </div>
-      <button type="button" class="btn btn-outline-primary mb-2" onclick="nuevo()">crear</button>
+      <button type="button" class="btn btn-outline-primary mb-2" onclick="nuevo('modalcrearRedes')">crear</button>
       <table id="socialMedia_data"class="table display responsive wrap">
       <thead>
               <tr>
@@ -65,11 +65,11 @@ if (isset($_SESSION["usu_id"])) {
       </table>
     </section>
     
-
+  <?php require_once("modulos/ModalsocialMedia.php"); ?>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
+  
   <?php require_once("modulos/footer.php"); ?>
 
   <!-- Control Sidebar -->
@@ -80,7 +80,8 @@ if (isset($_SESSION["usu_id"])) {
 </div>
 <!-- ./wrapper -->
 <?php require_once("modulos/js.php"); ?>
-<?php require_once("modulos/ModalsocialMedia.php"); ?>
+<script type="text/javascript" src="js/socialMedia.js"></script>
+
 
 
 

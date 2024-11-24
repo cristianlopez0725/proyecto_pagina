@@ -66,12 +66,16 @@ if (isset($_POST["enviar"]) && $_POST["enviar"] === "si") {
                             }
                         }
                     ?>
-                    <div class="row">
+                    <div class="row" style="display: flex; justify-content: center; align-items: center;">
                         <div class="col-4">
                             <input type="hidden" name="enviar" value="si">
-                            <button type="submit" class="btn btn-primary btn-block">Acceder</button>
+                                <button type="submit" class="btn btn-primary btn-block">Acceder</button>
                         </div>
                     </div>
+
+                    <p class="mb-1">
+                    <a href="recover_password.php">I forgot my password</a>
+                    </p>
                     
                 </form>
             </div>
