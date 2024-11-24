@@ -1,7 +1,5 @@
 
 <nav class="mt-2" >
-<input type="hidden" id="usu_id" value="<?php echo $_SESSION["usu_id"];?>">
-<button type="button" class="btn btn-outline-primary mb-2" onclick="nuevo()">crear</button>
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
@@ -30,7 +28,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="Usuarios.php" class="nav-link">
+            <a href="usuario.php" class="nav-link">
               <i class="nav-icon fas fa-user"></i>
               <p>
                 Usuarios

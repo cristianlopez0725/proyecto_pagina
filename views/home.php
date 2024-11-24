@@ -29,7 +29,7 @@ if (isset($_SESSION["usu_id"])) {
 </a>
 
     <div class="sidebar">
-      <input type="hidden" id="usu_id" value="<?php echo $_SESSION["usu_id"];?>">
+    
 
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
@@ -42,6 +42,7 @@ if (isset($_SESSION["usu_id"])) {
       </div>
 
       
+      <input type="hidden" id="usu_id" value="<?php echo $_SESSION["usu_id"];?>">
 
       <?php require_once("modulos/menu.php"); ?>
     </div>

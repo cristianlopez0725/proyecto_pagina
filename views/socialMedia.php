@@ -37,6 +37,8 @@ if (isset($_SESSION["usu_id"])) {
           <p class="text-white"><?php echo  $_SESSION['usu_nom'] ." ". $_SESSION['usu_apep'] ; ?></p>
         </div>
       </div>
+      <input type="hidden" id="usu_id" value="<?php echo $_SESSION["usu_id"];?>">
+
       <?php require_once("modulos/menu.php"); ?>
     </div>
   </aside>
@@ -50,6 +52,17 @@ if (isset($_SESSION["usu_id"])) {
           </div>
         </div>
       </div>
+      <button type="button" class="btn btn-outline-primary mb-2" onclick="nuevo()">crear</button>
+      <table id="socialMedia_data"class="table display responsive wrap">
+      <thead>
+              <tr>
+                <th class="wd-15p">URL</th>
+                <th class="wd-15p">Icono</th>        
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+      </table>
     </section>
     
 
@@ -67,6 +80,8 @@ if (isset($_SESSION["usu_id"])) {
 </div>
 <!-- ./wrapper -->
 <?php require_once("modulos/js.php"); ?>
+<?php require_once("modulos/ModalsocialMedia.php"); ?>
+
 
 
 </body>
