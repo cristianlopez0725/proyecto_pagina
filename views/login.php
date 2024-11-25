@@ -1,6 +1,7 @@
 <?php 
 require_once("../config/conexion.php");
 require_once("../models/Usuario.php");
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
@@ -45,42 +46,36 @@ if (isset($_POST["enviar"]) && $_POST["enviar"] === "si") {
                             <div class="input-group-text"><span class="fas fa-lock"></span></div>
                         </div>
                     </div>
-                    <?php 
-                        if(isset($_GET["m"])){
-                            switch($_GET["m"]){
-                                case "1":
-                                    ?>
-                                    <div class="alert alert-danger" role="alert">
-                                        Los datos ingresados son incorrectos!
-                                    </div>
-                                    <?php
-                                    break;
-                                case "2":
-                                ?>
-                                    <div class="alert alert-warning" role="alert">
-                                        El formulario no permite campos vacios!
-                                    </div>
-                                <?php
-                                break;
 
-                            }
+                    <?php 
+                    if(isset($_GET["m"])) {
+                        switch($_GET["m"]) {
+                            case "1":
+                                echo '<div class="alert alert-danger" role="alert">Los datos ingresados son incorrectos!</div>';
+                                break;
+                            case "2":
+                                echo '<div class="alert alert-warning" role="alert">El formulario no permite campos vacíos!</div>';
+                                break;
                         }
+                    }
                     ?>
+
                     <div class="row" style="display: flex; justify-content: center; align-items: center;">
                         <div class="col-4">
                             <input type="hidden" name="enviar" value="si">
-                                <button type="submit" class="btn btn-primary btn-block">Acceder</button>
+                            <button type="submit" class="btn btn-primary btn-block">Acceder</button>
                         </div>
                     </div>
 
                     <p class="mb-1">
-                    <a href="recover_password.php">I forgot my password</a>
+                        <a href="recover_password.php">I forgot my password</a>
                     </p>
                     
                 </form>
             </div>
         </div>
     </div>
+
     <script src="../public/plugins/jquery/jquery.min.js"></script>
     <script src="../public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../public/dist/js/adminlte.min.js"></script>

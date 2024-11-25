@@ -38,6 +38,12 @@ class Usuario extends Conectar {
             }
         }
     }
+
+
+
+
+
+
     
     public function get_usuario(){
         $usuario = parent::getConexion();
@@ -63,8 +69,8 @@ class Usuario extends Conectar {
     public function insert_usuario($usu_nom, $usu_apep, $usu_apem, $usu_correo, $usu_telf,){
         $usuario = parent::getConexion();
         parent::set_names();
-        $sql = "INSERT INTO  usuarios (usu_id, usu_nom, usu_apep, usu_apem, usu_correo, usu_telf, est)
-            VALUES (NULL, ?, ?,?,?,? 1)";
+        $sql = "INSERT INTO  usuarios (usu_id, usu_nom, usu_apep, usu_apem, usu_correo, usu_telf,)
+            VALUES (NULL, ?, ?,?,?,?)";
         $sql=$usuario->prepare($sql);
         $sql->execute();
         $sql->bindValue(1, $usu_nom);
@@ -102,6 +108,50 @@ class Usuario extends Conectar {
         return $resultado = $sql->fetchALL();
     }
 
+
+   public function recover_password($correo, $new_password) {
+    $conexion = parent::getConexion();
+    
+    // Asegurarse de que la conexión fue exitosa
+    if (!$conexion) {
+        echo "Error de conexión a la base de datos.";
+        return false;
+    }
+
+    // Verificar si el correo existe en la base de datos
+    $sql = "SELECT * FROM usuarios WHERE usu_correo = ?";
+    $stmt = $conexion->prepare($sql);
+    $stmt->execute([$correo]);
+    $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!$usuario) {
+        echo "No se encontró el usuario con ese correo.";
+        return false;
+    } else {
+        echo "Usuario encontrado: " . $usuario['usu_correo'];
+    }
+
+    // Hashear la nueva contraseña
+    $new_password_hash = password_hash($new_password, PASSWORD_BCRYPT);
+    echo "Contraseña hasheada: " . $new_password_hash;  // Verifica que se está generando correctamente
+
+    // Actualizar la contraseña en la base de datos
+    $sql = "UPDATE usuarios SET usu_pass = ? WHERE usu_correo = ?";
+    $stmt = $conexion->prepare($sql);
+    $result = $stmt->execute([$new_password_hash, $correo]);
+
+    if ($result) {
+        echo "Contraseña actualizada exitosamente.";
+        return true;
+    } else {
+        // Imprimir el error de la consulta si falla
+        print_r($stmt->errorInfo());
+        return false;
+    }
 }
 
-  
+}
+
+
+
+    

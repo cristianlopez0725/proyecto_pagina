@@ -20,6 +20,14 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="login.php" class="nav-link">
+            <i class='bx bxs-user-detail'></i>
+              <p>
+                Administracion
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="socialMedia.php" class="nav-link">
             <i class='bx bxs-share-alt' ></i>
               <p>

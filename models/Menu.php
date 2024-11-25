@@ -9,12 +9,12 @@ class Menu extends Conectar {
     }
 
     
-    public function update_menu($id, $opcion, $url, $est) {
+    public function update_menu($id, $opcion, $url) {
         $conectar = parent::getConexion();
         parent::set_names();
-        $sql = "UPDATE menu SET opcion = ?, url = ?, est = ? WHERE id = ?";
+        $sql = "UPDATE menu SET opcion = ?, url = ? WHERE id = ?";
         $stmt = $conectar->prepare($sql);
-        $stmt->execute([$opcion, $url, $est, $id]);
+        $stmt->execute([$opcion, $url,  $id]);
     }
 
     public function get_menu_by_id($id) {
