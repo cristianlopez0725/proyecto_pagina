@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 class Conectar {
     protected $dbn;
 
@@ -10,22 +12,25 @@ class Conectar {
             $password = "";
             $database = "pagina";
             $charset = "utf8";
-
+    
             $dsn = sprintf("%s:host=%s;dbname=%s;charset=%s", $engine, $server, $database, $charset);
-
+    
             $this->dbn = new PDO($dsn, $user, $password);
             $this->dbn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
+    
+            echo "La conexión fue exitosa"; 
+    
         } catch (PDOException $e) {
             echo "Error de conexión: " . $e->getMessage();
             exit;
         }
+    
+        
     }
-
     public function cerrarConexion() {
         $this->dbn = null;
     }
-
+    
     public function getConexion() {
         if (!$this->dbn) {
             $this->Conexion();
@@ -42,7 +47,6 @@ class Conectar {
     }
 
     public static function ruta() {
-        return "http://localhost/proyecto_pagina/";  // Asegúrate de que esta URL sea la correcta para tu servidor
+        return "http://localhost/proyecto_pagina/";
     }
 }
-?>
